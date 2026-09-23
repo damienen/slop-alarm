@@ -1,0 +1,4 @@
+samples/.cache/*
+!samples/.cache/answers.json
+!samples/.cache/results.csv
+!samples/.cache/chunks.csv

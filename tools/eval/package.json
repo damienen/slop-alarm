@@ -1,0 +1,15 @@
+{
+  "name": "@slop-alarm/eval",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "eval": "tsx --env-file-if-exists=.env src/run.ts",
+    "fit": "node fit.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": { "@slop-alarm/core": "0.1.0" },
+  "devDependencies": { "@types/node": "^22.0.0", "tsx": "^4.19.0", "typescript": "^5.6.0", "vitest": "^2.1.0" }
+}

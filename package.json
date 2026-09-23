@@ -1,0 +1,24 @@
+{
+  "name": "slop-alarm",
+  "private": true,
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Slop Alarm: a free, bring-your-own-key Chrome extension that flags AI-written text using the Jev decision model (TypeSafe or OpenRouter).",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @slop-alarm/core && npm run build -w @slop-alarm/extension",
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev:extension": "npm run dev -w @slop-alarm/extension",
+    "eval": "npm run eval -w @slop-alarm/eval --",
+    "fit": "npm run fit -w @slop-alarm/eval --",
+    "zip": "npm run zip -w @slop-alarm/extension"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

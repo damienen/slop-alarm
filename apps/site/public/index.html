@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Alarm - a free, bring-your-own-key AI writing check</title>
+<meta name="description" content="Slop Alarm is a free Chrome extension that checks whether text was likely written by AI. Paste your own TypeSafe or OpenRouter key. No account, no server, no subscription.">
+<link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img src="./assets/icon.svg" alt="" width="28" height="28">
+      Slop Alarm
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#how-it-works">How it works</a>
+      <a href="#what-it-looks-for">What it checks</a>
+      <a href="#cost">Cost</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-secondary" href="https://github.com/damienen/slop-alarm#install">Get it on GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Chrome extension, free</p>
+        <h1>A second opinion on the text in front of you.</h1>
+        <p class="lede">Slop Alarm reads a page or a selection and tells you whether it was likely written by AI, with the specific habits it found. Free. Bring your own API key. No server in between.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://github.com/damienen/slop-alarm#install">Get it on GitHub</a>
+        </div>
+        <p class="fine-print">Free. No account. No subscription. You pay your provider a fraction of a cent per check.</p>
+      </div>
+
+      <div>
+        <article class="card result-card" aria-label="Example result">
+          <div class="result-head">
+            <span class="verdict-label"><span class="verdict-dot" aria-hidden="true"></span>Likely AI</span>
+            <span class="verdict-pct tabular">82%</span>
+          </div>
+          <p class="result-detail">This text shows several habits typical of AI-generated writing.</p>
+          <p class="confidence-line">High confidence</p>
+          <ul class="tell-list">
+            <li class="tell-item">
+              <strong>Staged emphasis</strong>
+              <span>"It's not X, it's Y" contrasts, dramatic one-line closers, or announced run-ups like "Let's dive in".</span>
+            </li>
+            <li class="tell-item">
+              <strong>Inflated language</strong>
+              <span>Ordinary facts framed as pivotal, stock words like "delve" or "tapestry", or unnamed experts.</span>
+            </li>
+          </ul>
+          <p class="result-disclaimer">Slop Alarm gives an estimate, not proof. AI detection can be wrong in both directions. Do not use it as the only basis for accusing anyone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps. No account with us, ever.</h2>
+      <div class="steps">
+        <div>
+          <span class="step-num">1</span>
+          <h3>Get a key</h3>
+          <p>Create a free API key at <a href="https://console.typesafe.ai/keys">console.typesafe.ai/keys</a> or <a href="https://openrouter.ai/keys">openrouter.ai/keys</a>. Both give new accounts a small starting credit.</p>
+        </div>
+        <div>
+          <span class="step-num">2</span>
+          <h3>Paste it into settings</h3>
+          <p>Open the extension's settings and paste your key. It is stored only in your browser, in chrome.storage.local, and never leaves your device except to the provider you chose.</p>
+        </div>
+        <div>
+          <span class="step-num">3</span>
+          <h3>Check text</h3>
+          <p>Click the toolbar icon, press Alt+Shift+S, or right-click a selection. Slop Alarm's service worker sends the text straight from your browser to your provider. Nobody else is in the path.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-byok">
+    <div class="wrap">
+      <p class="eyebrow">Why bring your own key</p>
+      <h2>No server. No account. No subscription.</h2>
+      <p class="lede">Slop Alarm has no backend. The extension talks to the provider you chose directly, using your own key, and the provider bills your own account.</p>
+      <div class="info-grid">
+        <div class="card">
+          <h3>Nobody but your provider sees your text</h3>
+          <p>The text you check goes straight from your browser to TypeSafe or OpenRouter, over HTTPS, using your key. Slop Alarm's developer never receives it.</p>
+        </div>
+        <div class="card">
+          <h3>No account</h3>
+          <p>There is nothing to sign up for with Slop Alarm and nothing to sign into. Your provider key is the only credential involved.</p>
+        </div>
+        <div class="card">
+          <h3>No subscription</h3>
+          <p>There is no plan to pick and no recurring charge from Slop Alarm. You pay your provider directly, only for what you use.</p>
+        </div>
+        <div class="card">
+          <h3>You control the key</h3>
+          <p>Clear it from settings whenever you want, using "Clear local data". Nothing about it lives anywhere but your browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-it-looks-for">
+    <div class="wrap">
+      <p class="eyebrow">What it checks</p>
+      <h2>Five families of writing habits.</h2>
+      <p class="lede">Each check looks for patterns across these groups. A page can show more than one.</p>
+      <div class="tell-grid">
+        <div class="card">
+          <h3>Staged emphasis</h3>
+          <p>"It's not X, it's Y" contrasts, dramatic one-line closers, or announced run-ups like "Let's dive in".</p>
+        </div>
+        <div class="card">
+          <h3>Rhythm by rule</h3>
+          <p>Ideas forced into threes, dashes joining most clauses, or repeated sentence openings.</p>
+        </div>
+        <div class="card">
+          <h3>Inflated language</h3>
+          <p>Ordinary facts framed as pivotal, stock words like "delve" or "tapestry", or unnamed experts.</p>
+        </div>
+        <div class="card">
+          <h3>Decorative formatting</h3>
+          <p>Bold labels on every bullet, Title Case headings, or emoji section markers.</p>
+        </div>
+        <div class="card">
+          <h3>Chatbot leftovers</h3>
+          <p>Phrases from an assistant conversation, such as "I hope this helps" or "Great question!".</p>
+        </div>
+      </div>
+      <p class="credit-line">This taxonomy follows Wikipedia's guide to signs of AI writing and the open-source humanizer project.</p>
+    </div>
+  </section>
+
+  <section id="accuracy">
+    <div class="wrap">
+      <p class="eyebrow">Accuracy</p>
+      <h2>An estimate. It can be wrong.</h2>
+      <p class="lede">Slop Alarm scores writing habits, not authorship. Treat the result as a signal, not a verdict on a person.</p>
+      <ul class="accuracy-list">
+        <li>On the developer's test set (44 human texts, 48 AI texts), no human text was flagged as likely AI, and about six in ten AI texts were flagged. Most of the rest read as "unclear".</li>
+        <li>That test set is small. The real false-positive rate could be several percent.</li>
+        <li>All the AI texts in that test set came from one model family. Other models may behave differently.</li>
+        <li>Hard cases: short text, edited AI text, AI text written to sound casual, and formal or non-native English writing.</li>
+        <li>It is tuned and tested on English.</li>
+        <li>Never use a result as the sole basis to accuse someone of using AI. Ask, don't assume.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cost">
+    <div class="wrap">
+      <p class="eyebrow">Cost</p>
+      <h2>Fractions of a cent, paid to your provider.</h2>
+      <p class="lede">Slop Alarm does not charge anything. Your provider bills your own account for the model calls it makes on your behalf.</p>
+      <div class="stat-grid">
+        <div class="card">
+          <p class="stat-value">$0.00008</p>
+          <p>per 250 words checked, at current provider pricing</p>
+        </div>
+        <div class="card">
+          <p class="stat-value">~100 checks</p>
+          <p>for about one cent, at that rate</p>
+        </div>
+        <div class="card">
+          <p class="stat-value">$0</p>
+          <p>paid to Slop Alarm, ever</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <p class="eyebrow">Privacy</p>
+      <h2>The developer of Slop Alarm receives no data.</h2>
+      <div class="info-grid">
+        <div class="card">
+          <h3>What leaves your browser</h3>
+          <p>The text you check, and your API key as the request's authorization header, sent to the one provider you chose.</p>
+        </div>
+        <div class="card">
+          <h3>What stays local</h3>
+          <p>Settings, your key, your exclusion list, and a cache of scores keyed by a hash of the text, all in chrome.storage.local on this browser.</p>
+        </div>
+        <div class="card">
+          <h3>Auto-scan is opt-in</h3>
+          <p>Off by default. It skips pages with password or card fields, webmail, online documents, banking-style hosts, and local addresses, and honors your exclusion list.</p>
+        </div>
+        <div class="card">
+          <h3>Full detail</h3>
+          <p>Read the <a href="./privacy.html">privacy policy</a> for exactly what leaves your browser and what never does.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions people ask before installing.</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How accurate is it?</summary>
+          <p>We don't publish a single accuracy number because it depends on the text. On the developer's small test set, no human text was flagged as likely AI, and about six in ten AI texts were caught, with the rest mostly reading "unclear". Short passages, heavily edited AI text, and formal non-native English writing are the hardest cases. See the accuracy section above for the full picture.</p>
+        </details>
+        <details>
+          <summary>What gets sent, and to whom?</summary>
+          <p>Only the text of the page you check or the passage you select, plus your API key as the request's authorization header. It goes to the one provider you chose, TypeSafe or OpenRouter, at their API address. Nothing goes to Slop Alarm's developer.</p>
+        </details>
+        <details>
+          <summary>Do you see my text?</summary>
+          <p>No. There is no Slop Alarm server. The text goes directly from your browser to your chosen provider, and the developer of Slop Alarm never receives it.</p>
+        </details>
+        <details>
+          <summary>Where is my key stored?</summary>
+          <p>In chrome.storage.local, local to this browser. It is never sent anywhere except as the authorization header on requests to the provider you chose. Use "Clear local data" in settings to remove it.</p>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <p>Slop Alarm itself is free. Your provider bills your own account for each check, at roughly $0.00008 per 250 words, so about a hundred page checks cost around one cent. See the cost section above.</p>
+        </details>
+        <details>
+          <summary>TypeSafe or OpenRouter, which should I pick?</summary>
+          <p>TypeSafe is direct from the model's maker. OpenRouter is handy if you already keep credit there. Either way, the same Jev model does the judging, and results are the same.</p>
+        </details>
+        <details>
+          <summary>What is Jev?</summary>
+          <p>Jev is the decision model that judges each piece of text, made by TypeSafe and reachable through TypeSafe or OpenRouter. Slop Alarm turns its answers into a verdict, a confidence level, and named tells.</p>
+        </details>
+        <details>
+          <summary>Which sites does it work on?</summary>
+          <p>Manual checks work on most pages with readable article text. Auto-scan skips pages that look like webmail, online documents, banking-style hosts, sign-in forms, or local addresses, and you can add your own exclusions.</p>
+        </details>
+        <details>
+          <summary>Why does auto-scan need access to all sites, and how do I limit it?</summary>
+          <p>Auto-scan has to read whatever page you are currently browsing, and that could be any site, so Chrome asks for the optional <code>&lt;all_urls&gt;</code> permission only when you turn auto-scan on. Leave auto-scan off to avoid that permission entirely, or add specific sites to your exclusion list in settings to keep it from running there. You can also revoke the permission from Chrome's own extension settings at any time.</p>
+        </details>
+        <details>
+          <summary>Does it work on non-English text?</summary>
+          <p>It may, but it is tuned and tested on English. Treat results on other languages with extra caution.</p>
+        </details>
+        <details>
+          <summary>Is it open source?</summary>
+          <p>Yes, under the MIT licence. The source is at <a href="https://github.com/damienen/slop-alarm">github.com/damienen/slop-alarm</a>.</p>
+        </details>
+        <details>
+          <summary>Is it on the Chrome Web Store?</summary>
+          <p>No. Slop Alarm is not listed on the Chrome Web Store. You build it yourself from source; see <a href="https://github.com/damienen/slop-alarm#install">the install instructions</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <p class="footer-copy">Slop Alarm gives an estimate, not proof.</p>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="./privacy.html">Privacy</a>
+      <a href="https://github.com/damienen/slop-alarm/issues">GitHub issues</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

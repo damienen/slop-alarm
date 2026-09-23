@@ -1,0 +1,30 @@
+{
+  "name": "@slop-alarm/extension",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node build.mjs --watch",
+    "build": "node build.mjs",
+    "build:prod": "node build.mjs --prod",
+    "zip": "node build.mjs --prod --zip",
+    "icons": "node scripts/make-icons.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "e2e": "node e2e/run.mjs"
+  },
+  "dependencies": {
+    "@slop-alarm/core": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "archiver": "^7.0.0",
+    "esbuild": "^0.24.0",
+    "jsdom": "^25.0.0",
+    "playwright": "^1.48.0",
+    "sharp": "^0.33.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

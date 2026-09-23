@@ -1,0 +1,142 @@
+body {
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.brand .mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand .mark svg {
+  width: 15px;
+  height: 15px;
+}
+
+section.card h2 {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.field-row:last-child {
+  border-bottom: none;
+}
+
+.field-row .desc {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.host-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.host-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.host-list button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.add-host-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.add-host-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.clear-status {
+  min-height: 16px;
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.key-note {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.usage-today {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.clear-data-row {
+  margin-top: 14px;
+}
+
+.error-text {
+  color: var(--alarm);
+  font-size: 12px;
+}
+
+.success-text {
+  color: var(--green);
+  font-size: 12px;
+}
+
+.privacy p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.privacy p.muted {
+  color: var(--muted);
+}

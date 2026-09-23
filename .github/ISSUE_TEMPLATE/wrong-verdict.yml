@@ -1,0 +1,45 @@
+name: Wrong verdict
+description: Report a case where Slop Alarm's verdict looked wrong.
+labels: ["wrong-verdict"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. It helps most when the text itself, or a link to it, is included.
+  - type: textarea
+    id: text-or-link
+    attributes:
+      label: The text
+      description: A public link to the text, or the text pasted directly.
+      placeholder: https://example.com/the-page, or paste the text here
+    validations:
+      required: true
+  - type: input
+    id: actual-verdict
+    attributes:
+      label: What Slop Alarm said
+      placeholder: e.g. "Likely AI, 82%"
+    validations:
+      required: true
+  - type: input
+    id: expected-verdict
+    attributes:
+      label: What it should have said
+      placeholder: e.g. "Likely human"
+    validations:
+      required: true
+  - type: textarea
+    id: how-you-know
+    attributes:
+      label: How do you know the correct answer?
+      description: For example, you wrote it yourself, it predates November 2022, or it is labelled as AI-written by its source.
+      placeholder: I wrote this myself in 2021 / This is dated 2019 on the original site / This came from an AI-writing dataset labelled as AI
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights to share
+      options:
+        - label: I have the right to share this text publicly in this issue (I wrote it, it is publicly available, or I have permission).
+          required: true

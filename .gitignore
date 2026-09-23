@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+*.zip
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+coverage/
+.vercel/
+.e2e-profile/
+.e2e-shots/
