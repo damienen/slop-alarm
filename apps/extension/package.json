@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.280",
-    "archiver": "^7.0.0",
+    "archiver": "^8.0.0",
     "esbuild": "^0.24.0",
     "jsdom": "^25.0.0",
     "playwright": "^1.48.0",
