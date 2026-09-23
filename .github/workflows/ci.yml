@@ -25,7 +25,7 @@ jobs:
       - run: npm run build
       - run: npm run zip
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: slop-alarm-extension
           path: apps/extension/slop-alarm-*.zip
