@@ -11,12 +11,12 @@
   ],
   "scripts": {
     "build": "npm run build -w @slop-alarm/core && npm run build -w @slop-alarm/extension",
-    "test": "npm test --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present",
-    "dev:extension": "npm run dev -w @slop-alarm/extension",
-    "eval": "npm run eval -w @slop-alarm/eval --",
+    "test": "npm run build -w @slop-alarm/core && npm test --workspaces --if-present",
+    "typecheck": "npm run build -w @slop-alarm/core && npm run typecheck --workspaces --if-present",
+    "dev:extension": "npm run build -w @slop-alarm/core && npm run dev -w @slop-alarm/extension",
+    "eval": "npm run build -w @slop-alarm/core && npm run eval -w @slop-alarm/eval --",
     "fit": "npm run fit -w @slop-alarm/eval --",
-    "zip": "npm run zip -w @slop-alarm/extension"
+    "zip": "npm run build -w @slop-alarm/core && npm run zip -w @slop-alarm/extension"
   },
   "engines": {
     "node": ">=20"
